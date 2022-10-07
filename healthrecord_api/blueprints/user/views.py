@@ -77,42 +77,42 @@ def showrecords():
     
     records = []
     
-    # if len(forms) > 0:
+    if len(forms) > 0:
 
-    #     for form in forms:
-    #         form.append([{'id':record_exists.id, 'Name': record_exists.Name, 
-    #         'Gender': record_exists.Gender, 'Birthdate': record_exists.Birthdate, 
-    #         'Address': record_exists.Address, 'Medications': record_exists.Medications, 
-    #         'Nameofnextkin': record_exists.Nameofnextkin, 'Phoneofnextkin': record_exists.Phoneofnextkin,
-    #         'Reasonforvisit': record_exists.Reasonforvisit, 'Errormessage': "",
-    #         'Fever': record_exists.Fever, 'Headache': record_exists.Headache, 'Nighchills': record_exists.Nightchills,
-    #         'Sorethroat': record_exists.Sorethroat, 'Cough': record_exists.Cough, 'Breathingdiff': record_exists.Breathingdiff,
-    #         'Diarrhoea': record_exists.Diarrhoea, 'Chestpain': record_exists.Chestpain, 'Legnumbness': record_exists.Legnumbness,
-    #         'Handnumbness': record_exists.Handnumbness, 'Facenumbness': record_exists.Facenumbness, 
-    #         'Abdominalpain': record_exists.Abdominalpain, 'Diabetes': record_exists.Diabetes,
-    #         'Highbloodpressure': record_exists.Highbloodpressure, 'Highcholesterol': record_exists.Highcholesterol, 
-    #         'Asthma': record_exists.Asthma, 'Kidneydisease': record_exists.Kidneydisease, 'Arthritis': record_exists.Arthritis,
-    #         'Pancreaticcancer': record_exists.Pancreaticcancer, 'Livercancer': record_exists.Livercancer, 
-    #         'Colorectalcancer': record_exists.Colorectalcancer, 'COPD': record_exists.COPD, 'Depression': record_exists.Depression, 
-    #         'Lungcancer': record_exists.Lungcancer
-    #         }])
+        for form in forms:
+            records.append([{'id':form.id, 'Name': form.Name, 
+            'Gender': form.Gender, 'Birthdate': form.Birthdate, 
+            'Address': form.Address, 'Medications': form.Medications, 
+            'Nameofnextkin': form.Nameofnextkin, 'Phoneofnextkin': form.Phoneofnextkin,
+            'Reasonforvisit': form.Reasonforvisit, 'Errormessage': "",
+            'Fever': form.Fever, 'Headache': form.Headache, 'Nighchills': form.Nightchills,
+            'Sorethroat': form.Sorethroat, 'Cough': form.Cough, 'Breathingdiff': form.Breathingdiff,
+            'Diarrhoea': form.Diarrhoea, 'Chestpain': form.Chestpain, 'Legnumbness': form.Legnumbness,
+            'Handnumbness': form.Handnumbness, 'Facenumbness': form.Facenumbness, 
+            'Abdominalpain': form.Abdominalpain, 'Diabetes': form.Diabetes,
+            'Highbloodpressure': form.Highbloodpressure, 'Highcholesterol': form.Highcholesterol, 
+            'Asthma': form.Asthma, 'Kidneydisease': form.Kidneydisease, 'Arthritis': form.Arthritis,
+            'Pancreaticcancer': form.Pancreaticcancer, 'Livercancer': form.Livercancer, 
+            'Colorectalcancer': form.Colorectalcancer, 'COPD': form.COPD, 'Depression': form.Depression, 
+            'Lungcancer': form.Lungcancer
+            }])
         
 
-    # else: 
-    #     form.append([{'id':"", 'Name': "", 
-    #     'Gender': "", 'Birthdate': "", 
-    #     'Address': "", 'Medications': "", 
-    #     'Nameofnextkin': "", 'Phoneofnextkin': "",
-    #     'Reasonforvisit': "", 'Errormessage': "Record does not exist.", 
-    #     'Fever': "", 'Headache': "", 'Nighchills': "",
-    #     'Sorethroat': "", 'Cough': "", 'Breathingdiff': "",
-    #     'Diarrhoea': "", 'Chestpain': "", 'Legnumbness': "",
-    #     'Handnumbness': "", 'Facenumbness': "", 
-    #     'Abdominalpain': "", 'Diabetes': "",
-    #     'Highbloodpressure': "", 'Highcholesterol': "", 
-    #     'Asthma': "", 'Kidneydisease': "", 'Arthritis': "",
-    #     'Pancreaticcancer': "", 'Livercancer': "", 
-    #     'Colorectalcancer': "", 'COPD': "", 'Depression': "", 'Lungcancer': ""}])
+    else: 
+        records.append([{'id':"", 'Name': "", 
+        'Gender': "", 'Birthdate': "", 
+        'Address': "", 'Medications': "", 
+        'Nameofnextkin': "", 'Phoneofnextkin': "",
+        'Reasonforvisit': "", 'Errormessage': "Record does not exist.", 
+        'Fever': "", 'Headache': "", 'Nighchills': "",
+        'Sorethroat': "", 'Cough': "", 'Breathingdiff': "",
+        'Diarrhoea': "", 'Chestpain': "", 'Legnumbness': "",
+        'Handnumbness': "", 'Facenumbness': "", 
+        'Abdominalpain': "", 'Diabetes': "",
+        'Highbloodpressure': "", 'Highcholesterol': "", 
+        'Asthma': "", 'Kidneydisease': "", 'Arthritis': "",
+        'Pancreaticcancer': "", 'Livercancer': "", 
+        'Colorectalcancer': "", 'COPD': "", 'Depression': "", 'Lungcancer': ""}])
 
 
     return jsonify({'records' : records})
