@@ -2,6 +2,7 @@ from flask import Blueprint
 from app import app
 from flask_cors import CORS
 from models.user import User
+from models.form import Form
 from flask import Blueprint, jsonify, request
 from playhouse.shortcuts import model_to_dict, dict_to_model
 import json
@@ -60,6 +61,61 @@ def show():
 
     return jsonify({'login_details' : login_details})
 
+@users_api_blueprint.route('/showforms', methods=["POST"])
+def showforms():
+
+    print("connected")
+    user_input = request.get_json()
+    print('user_input')
+    print(user_input)
+
+    token = user_input['token']
+
+    login_details = []
+
+    forms = Form.get_or_none(Form.UserID == token)
+    
+    records = []
+    
+    if len(forms) > 0:
+
+        for form in forms:
+            form.append([{'id':record_exists.id, 'Name': record_exists.Name, 
+            'Gender': record_exists.Gender, 'Birthdate': record_exists.Birthdate, 
+            'Address': record_exists.Address, 'Medications': record_exists.Medications, 
+            'Nameofnextkin': record_exists.Nameofnextkin, 'Phoneofnextkin': record_exists.Phoneofnextkin,
+            'Reasonforvisit': record_exists.Reasonforvisit, 'Errormessage': "",
+            'Fever': record_exists.Fever, 'Headache': record_exists.Headache, 'Nighchills': record_exists.Nightchills,
+            'Sorethroat': record_exists.Sorethroat, 'Cough': record_exists.Cough, 'Breathingdiff': record_exists.Breathingdiff,
+            'Diarrhoea': record_exists.Diarrhoea, 'Chestpain': record_exists.Chestpain, 'Legnumbness': record_exists.Legnumbness,
+            'Handnumbness': record_exists.Handnumbness, 'Facenumbness': record_exists.Facenumbness, 
+            'Abdominalpain': record_exists.Abdominalpain, 'Diabetes': record_exists.Diabetes,
+            'Highbloodpressure': record_exists.Highbloodpressure, 'Highcholesterol': record_exists.Highcholesterol, 
+            'Asthma': record_exists.Asthma, 'Kidneydisease': record_exists.Kidneydisease, 'Arthritis': record_exists.Arthritis,
+            'Pancreaticcancer': record_exists.Pancreaticcancer, 'Livercancer': record_exists.Livercancer, 
+            'Colorectalcancer': record_exists.Colorectalcancer, 'COPD': record_exists.COPD, 'Depression': record_exists.Depression, 
+            'Lungcancer': record_exists.Lungcancer
+            }])
+        
+
+    else: 
+        form.append([{'id':"", 'Name': "", 
+        'Gender': "", 'Birthdate': "", 
+        'Address': "", 'Medications': "", 
+        'Nameofnextkin': "", 'Phoneofnextkin': "",
+        'Reasonforvisit': "", 'Errormessage': "Record does not exist.", 
+        'Fever': "", 'Headache': "", 'Nighchills': "",
+        'Sorethroat': "", 'Cough': "", 'Breathingdiff': "",
+        'Diarrhoea': "", 'Chestpain': "", 'Legnumbness': "",
+        'Handnumbness': "", 'Facenumbness': "", 
+        'Abdominalpain': "", 'Diabetes': "",
+        'Highbloodpressure': "", 'Highcholesterol': "", 
+        'Asthma': "", 'Kidneydisease': "", 'Arthritis': "",
+        'Pancreaticcancer': "", 'Livercancer': "", 
+        'Colorectalcancer': "", 'COPD': "", 'Depression': "", 'Lungcancer': ""}])
+
+
+    return jsonify({'records' : records})
 
 
 # @users_api_blueprint.route('/update/<field>', methods=['POST'])

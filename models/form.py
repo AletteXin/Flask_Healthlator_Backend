@@ -7,6 +7,7 @@ from database import db
 
 class Form(BaseModel):
     Name = pw.CharField()
+    UserID = pw.CharField(default = "")
     Gender = pw.CharField(unique=False)
     Birthdate = pw.DateTimeField()
     Address = pw.CharField()

@@ -36,7 +36,7 @@ def create():
     print(new_entry['Asthma'])
     print(new_entry['Livercancer'])
 
-    create = Form.create(Name = new_entry['Name'], Gender = new_entry['Gender'], Birthdate = new_entry['Birthdate'], 
+    create = Form.create(Name = new_entry['Name'], UserID = new_entry['ID'], Gender = new_entry['Gender'], Birthdate = new_entry['Birthdate'], 
     Address = new_entry['Address'], Medications = new_entry['Medications'], Nameofnextkin = new_entry['Nameofnextkin'],
     Phoneofnextkin = new_entry['Phoneofnextkin'], Reasonforvisit = new_entry['Reasonforvisit'], Fever = new_entry['Fever'], 
     Headache = new_entry['Headache'], Nightchills = new_entry['Nightchills'], Sorethroat = new_entry['Sorethroat'], Cough = new_entry['Cough'], 
