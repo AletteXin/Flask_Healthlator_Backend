@@ -1,7 +1,7 @@
 from flask import Blueprint
 from app import app
 from flask_cors import CORS
-from models.form import Form
+from models.user import User
 from flask import Blueprint, jsonify, request
 from playhouse.shortcuts import model_to_dict, dict_to_model
 import json
