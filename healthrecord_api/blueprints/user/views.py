@@ -77,45 +77,45 @@ def showrecords():
     
     records = []
     
-    if len(forms) > 0:
+    # if len(forms) > 0:
 
-        for form in forms:
-            records.append([{'id':form.id, 'Name': form.Name, 
-            'Gender': form.Gender, 'Birthdate': form.Birthdate, 
-            'Address': form.Address, 'Medications': form.Medications, 
-            'Nameofnextkin': form.Nameofnextkin, 'Phoneofnextkin': form.Phoneofnextkin,
-            'Reasonforvisit': form.Reasonforvisit, 'Errormessage': "",
-            'Fever': form.Fever, 'Headache': form.Headache, 'Nighchills': form.Nightchills,
-            'Sorethroat': form.Sorethroat, 'Cough': form.Cough, 'Breathingdiff': form.Breathingdiff,
-            'Diarrhoea': form.Diarrhoea, 'Chestpain': form.Chestpain, 'Legnumbness': form.Legnumbness,
-            'Handnumbness': form.Handnumbness, 'Facenumbness': form.Facenumbness, 
-            'Abdominalpain': form.Abdominalpain, 'Diabetes': form.Diabetes,
-            'Highbloodpressure': form.Highbloodpressure, 'Highcholesterol': form.Highcholesterol, 
-            'Asthma': form.Asthma, 'Kidneydisease': form.Kidneydisease, 'Arthritis': form.Arthritis,
-            'Pancreaticcancer': form.Pancreaticcancer, 'Livercancer': form.Livercancer, 
-            'Colorectalcancer': form.Colorectalcancer, 'COPD': form.COPD, 'Depression': form.Depression, 
-            'Lungcancer': form.Lungcancer
-            }])
+    #     for form in forms:
+    #         records.append([{'id':form.id, 'Name': form.Name, 
+    #         'Gender': form.Gender, 'Birthdate': form.Birthdate, 
+    #         'Address': form.Address, 'Medications': form.Medications, 
+    #         'Nameofnextkin': form.Nameofnextkin, 'Phoneofnextkin': form.Phoneofnextkin,
+    #         'Reasonforvisit': form.Reasonforvisit, 'Errormessage': "",
+    #         'Fever': form.Fever, 'Headache': form.Headache, 'Nighchills': form.Nightchills,
+    #         'Sorethroat': form.Sorethroat, 'Cough': form.Cough, 'Breathingdiff': form.Breathingdiff,
+    #         'Diarrhoea': form.Diarrhoea, 'Chestpain': form.Chestpain, 'Legnumbness': form.Legnumbness,
+    #         'Handnumbness': form.Handnumbness, 'Facenumbness': form.Facenumbness, 
+    #         'Abdominalpain': form.Abdominalpain, 'Diabetes': form.Diabetes,
+    #         'Highbloodpressure': form.Highbloodpressure, 'Highcholesterol': form.Highcholesterol, 
+    #         'Asthma': form.Asthma, 'Kidneydisease': form.Kidneydisease, 'Arthritis': form.Arthritis,
+    #         'Pancreaticcancer': form.Pancreaticcancer, 'Livercancer': form.Livercancer, 
+    #         'Colorectalcancer': form.Colorectalcancer, 'COPD': form.COPD, 'Depression': form.Depression, 
+    #         'Lungcancer': form.Lungcancer
+    #         }])
         
 
-    else: 
-        records.append([{'id':"", 'Name': "", 
-        'Gender': "", 'Birthdate': "", 
-        'Address': "", 'Medications': "", 
-        'Nameofnextkin': "", 'Phoneofnextkin': "",
-        'Reasonforvisit': "", 'Errormessage': "Record does not exist.", 
-        'Fever': "", 'Headache': "", 'Nighchills': "",
-        'Sorethroat': "", 'Cough': "", 'Breathingdiff': "",
-        'Diarrhoea': "", 'Chestpain': "", 'Legnumbness': "",
-        'Handnumbness': "", 'Facenumbness': "", 
-        'Abdominalpain': "", 'Diabetes': "",
-        'Highbloodpressure': "", 'Highcholesterol': "", 
-        'Asthma': "", 'Kidneydisease': "", 'Arthritis': "",
-        'Pancreaticcancer': "", 'Livercancer': "", 
-        'Colorectalcancer': "", 'COPD': "", 'Depression': "", 'Lungcancer': ""}])
+    # else: 
+    #     records.append([{'id':"", 'Name': "", 
+    #     'Gender': "", 'Birthdate': "", 
+    #     'Address': "", 'Medications': "", 
+    #     'Nameofnextkin': "", 'Phoneofnextkin': "",
+    #     'Reasonforvisit': "", 'Errormessage': "Record does not exist.", 
+    #     'Fever': "", 'Headache': "", 'Nighchills': "",
+    #     'Sorethroat': "", 'Cough': "", 'Breathingdiff': "",
+    #     'Diarrhoea': "", 'Chestpain': "", 'Legnumbness': "",
+    #     'Handnumbness': "", 'Facenumbness': "", 
+    #     'Abdominalpain': "", 'Diabetes': "",
+    #     'Highbloodpressure': "", 'Highcholesterol': "", 
+    #     'Asthma': "", 'Kidneydisease': "", 'Arthritis': "",
+    #     'Pancreaticcancer': "", 'Livercancer': "", 
+    #     'Colorectalcancer': "", 'COPD': "", 'Depression': "", 'Lungcancer': ""}])
 
 
-    return jsonify({'records' : records})
+    return jsonify({'records' : forms})
 
 
 # @users_api_blueprint.route('/update/<field>', methods=['POST'])
