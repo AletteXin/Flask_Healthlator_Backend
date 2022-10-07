@@ -1,44 +1,44 @@
-# from flask import Blueprint
-# from app import app
-# from flask_cors import CORS
-# from models.form import Form
-# from flask import Blueprint, jsonify, request
-# from playhouse.shortcuts import model_to_dict, dict_to_model
-# import json
-# import datetime as dt
-# import peewee as pw
-# import datetime
-# from database import db
-# from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Blueprint
+from app import app
+from flask_cors import CORS
+from models.form import Form
+from flask import Blueprint, jsonify, request
+from playhouse.shortcuts import model_to_dict, dict_to_model
+import json
+import datetime as dt
+import peewee as pw
+import datetime
+from database import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
-# users_api_blueprint = Blueprint('users_api',
-#                             __name__,
-#                             template_folder='templates')
+users_api_blueprint = Blueprint('users_api',
+                            __name__,
+                            template_folder='templates')
 
 
-# @users_api_blueprint.route('/create', methods=['POST'])
-# def create():
+@users_api_blueprint.route('/create', methods=['POST'])
+def create():
 
-#     print("connected")
-#     new_entry = request.get_json()
-#     print('new_entry')
-#     print(new_entry)
+    print("connected")
+    new_entry = request.get_json()
+    print('new_entry')
+    print(new_entry)
 
-#     current_time = datetime.datetime.now
-#     now = print(current_time)
+    current_time = datetime.datetime.now
+    now = print(current_time)
 
-#     new_username = new_entry['Username']
-#     new_password = new_entry['Password']
-#     new_repassword = new_entry['RePassword']
+    new_username = new_entry['Username']
+    new_password = new_entry['Password']
+    new_repassword = new_entry['RePassword']
 
-#     if new_password != new_repassword:
-#         message = ["Passwords do not match. Please reenter details."]
-#         return jsonify({'message' : message})
+    if new_password != new_repassword:
+        message = ["Passwords do not match. Please reenter details."]
+        return jsonify({'message' : message})
     
-#     create = User.create(Username = new_username, Password_hash = generate_password_hash(new_password))
-#     message = ["Account creaated."]
-#     return jsonify({'message' : message})
+    create = User.create(Username = new_username, Password_hash = generate_password_hash(new_password))
+    message = ["Account creaated."]
+    return jsonify({'message' : message})
 
 
 # @users_api_blueprint.route('/show', methods=["GET"])

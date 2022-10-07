@@ -10,10 +10,10 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 ## API Routes ##
 from healthrecord_api.blueprints.records.views import records_api_blueprint
-# from healthrecord_api.blueprints.user.views import users_api_blueprint
+from healthrecord_api.blueprints.user.views import users_api_blueprint
 
 app.register_blueprint(records_api_blueprint, url_prefix='/api/records')
-# app.register_blueprint(users_api_blueprint, url_prefix='/api/user')
+app.register_blueprint(users_api_blueprint, url_prefix='/api/user')
 
 @app.route("/")
 def home():
