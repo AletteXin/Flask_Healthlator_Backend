@@ -38,32 +38,27 @@ def create():
     return jsonify({'message' : message})
 
 
-# @users_api_blueprint.route('/show', methods=["GET"])
-# @login_required
-# def show(show_username):
+@users_api_blueprint.route('/show', methods=["POST"])
+def show():
     
-#     if session.get('user_id'):
-#         user = User.get_or_none(User.id == session["user_id"])
-#     else:
-#         user = None 
-    
-#     show_user = User.get_or_none(User.username == show_username)
+    print("connected")
+    user_input = request.get_json()
+    print('user_input')
+    print(user_input)
 
-#     if show_user:
-#         show_username = show_user.username
-#         images = Image.select().where(Image.user_id == show_user.id).order_by(Image.date_posted.desc())
-#         approval_record = Follow.get_or_none(Follow.follower == user, Follow.idol == show_user)
-#         show_idols = User.select().join(Follow, on = Follow.idol_id == User.id).where(Follow.follower_id == show_user.id, Follow.approved == "1")
-#         length_si = show_idols.count()
-#         user_liked = Image.select().join(Likes, on = Likes.liker_id == user.id).where(Likes.image_id == Image.id)
+    new_username = user_input['Username']
+    new_password = user_input['Password']
 
+    login_details = []
 
-#         return render_template('/users/profile.html', show_user = show_user, approval_record = approval_record, images = images, 
-#         show_idols = show_idols,  length_si = length_si, user_liked = user_liked)
+    user = User.get_or_none(User.Username == new_username)
+    if user and check_password_hash(user.Password_hash, new_password):
+        login_details.append([{'id': user.id, 'Username': user.Username, 'Errormessage': ""}])
 
-        
-#     else:
-#         return redirect (url_for('login.new'))
+    else: 
+        login_details.append([{'id': "", 'Username': "", 'Errormessage': "Invalid login details. Please try again."}])
+
+    return jsonify({'login_details' : login_details})
 
 
 
