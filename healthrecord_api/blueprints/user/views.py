@@ -25,9 +25,6 @@ def create():
     print('new_entry')
     print(new_entry)
 
-    current_time = datetime.datetime.now
-    now = print(current_time)
-
     new_username = new_entry['Username']
     new_password = new_entry['Password']
     new_repassword = new_entry['RePassword']
@@ -37,7 +34,7 @@ def create():
         return jsonify({'message' : message})
     
     create = User.create(Username = new_username, Password_hash = generate_password_hash(new_password))
-    message = ["Account creaated."]
+    message = ["Account created."]
     return jsonify({'message' : message})
 
 
