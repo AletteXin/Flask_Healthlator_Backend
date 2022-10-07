@@ -61,8 +61,8 @@ def show():
 
     return jsonify({'login_details' : login_details})
 
-@users_api_blueprint.route('/showforms', methods=["POST"])
-def showforms():
+@users_api_blueprint.route('/showrecords', methods=["POST"])
+def showrecords():
 
     print("connected")
     user_input = request.get_json()
