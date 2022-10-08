@@ -78,7 +78,8 @@ def showrecords():
     records = []
     
     if forms:
-        records.append([{'id':form.id, 'Name': forms.Name}])
+        for form in forms:
+            records.append([{'id':form.id, 'Name': form.Name}])
         
     # else: 
     #     records.append([{'id':"", 'Name': "", 
