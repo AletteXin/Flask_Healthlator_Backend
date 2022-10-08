@@ -73,13 +73,14 @@ def showrecords():
 
     login_details = []
 
-    # forms = Form.query.filter_by(UserID = token)
-    record_exists = Form.get_or_none(Form.UserID == token)
+    forms = Form.select().where(Form.UserID == token).order_by(Form.created_at.desc())
+    # record_exists = Form.get_or_none(Form.UserID == token)
     
     records = []
     
-    if record_exists:
-        records.append([{'id':record_exists.id, 'Name': record_exists.Name}])
+    if forms:
+        for form in forms:
+            records.append([{'id':form.id, 'Name': form.Name}])
         
     # else: 
     #     records.append([{'id':"", 'Name': "", 
