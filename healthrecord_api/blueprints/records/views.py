@@ -77,7 +77,7 @@ def show():
     record_details = []
     
     if record_exists:
-        record_details.append([{'id':record_exists.id, 'Name': record_exists.Name, 
+        record_details.append([{'id':record_exists.id, 'Name': record_exists.Name, 'Createdon': record_exists.created_at, 
         'Gender': record_exists.Gender, 'Birthdate': record_exists.Birthdate, 
         'Address': record_exists.Address, 'Medications': record_exists.Medications, 
         'Nameofnextkin': record_exists.Nameofnextkin, 'Phoneofnextkin': record_exists.Phoneofnextkin,
@@ -96,7 +96,7 @@ def show():
 
     
     else: 
-        record_details.append([{'id':"", 'Name': "", 
+        record_details.append([{'id':"", 'Name': "", 'Createdon': "", 
         'Gender': "", 'Birthdate': "", 
         'Address': "", 'Medications': "", 
         'Nameofnextkin': "", 'Phoneofnextkin': "",
